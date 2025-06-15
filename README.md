@@ -11,7 +11,7 @@ Built using **ASP.NET Core MVC**, the platform offers features such as:
 
 ---
 ## Home Page
-![Screenshot_15-5-2025_163742_localhost](https://github.com/user-attachments/assets/0b8d3453-b4da-4981-a7f6-e3ca62dc20d0)
+![image](https://github.com/user-attachments/assets/16f6db18-5cc2-4231-83fe-136a07f19157)
 
 ## 📌 Key Features
 
