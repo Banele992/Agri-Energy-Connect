@@ -1,0 +1,65 @@
+@model Agri_Energy_Connect.Models.FarmerRegistrationViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Add New Farmer</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+           <!-- Name Field -->
+            <div class="form-group mb-3">
+                <label asp-for="Farmer.FarmerName" class="form-label">Name</label>
+                <input asp-for="Farmer.FarmerName" class="form-control" />
+                <span asp-validation-for="Farmer.FarmerName" class="text-danger"></span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group mb-3">
+                <label asp-for="Farmer.FarmerEmail" class="form-label">Email</label>
+                <input asp-for="Farmer.FarmerEmail" type="email" class="form-control" />
+                <span asp-validation-for="Farmer.FarmerEmail" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="form-group mb-3">
+                <label asp-for="Farmer.FarmerPhone" class="form-label">Phone Number</label>
+                <input asp-for="Farmer.FarmerPhone" class="form-control" />
+                <span asp-validation-for="Farmer.FarmerPhone" class="text-danger"></span>
+            </div>
+            
+            <!-- Password Field -->
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            
+            <!-- Confirm Password Field -->
+            <div class="form-group mb-3">
+                <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

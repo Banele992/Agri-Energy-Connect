@@ -1,0 +1,125 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Welcome to Agri-Energy Connect</h1>
+    <p>The trusted platform where farmers connect directly with buyers and showcase their harvests.</p>
+    <a href="/Identity/Account/Login" class="cta-button">Get Started</a>
+</div>
+
+<!-- Features Section -->
+<div class="features">
+    <div class="feature-card">
+        <h3>Sell with Ease</h3>
+        <ul>
+            <li>Post your farm products quickly and reach a wide audience of buyers looking for fresh produce.</li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <h3>Secure Transactions</h3>
+        <ul>
+            <li>Benefit from a secure and authenticated platform powered by ASP.NET Core Identity.</li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <h3>Community Driven</h3>
+        <ul>
+            <li>Join a growing network of sustainable farmers and eco-conscious buyers.</li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <h3>Sustainable Farming Hub</h3>
+        <ul>
+            <li>A resource centre for sharing best practices in sustainable farming, including organic farming techniques, water conservation methods, and soil health maintenance.</li>
+            <li>Interactive forums and discussion boards for farmers to seek advice, share experiences, and collaborate on sustainable farming initiatives.</li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <h3>Green Energy Marketplace</h3>
+        <ul>
+            <li>A marketplace for green energy solutions tailored to agricultural needs, such as solar-powered irrigation systems, wind turbines for farms, and biogas energy solutions.</li>
+            <li>Features for comparing products, reviewing technologies, and connecting with green tech providers.</li>
+        </ul>
+    </div>
+    <div class="feature-card">
+        <h3>Educational and Training Resources</h3>
+        <ul>
+            <li>Online courses, webinars, and workshops on integrating green energy technologies in agriculture.</li>
+            <li>Material focusing on the benefits and practicalities of adopting renewable energy sources on farms.</li>
+            <li>A platform for farmers and energy experts to propose and collaborate on joint projects.</li>
+            <li>Information on grants, subsidies, and funding opportunities for green initiatives in agriculture.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Recently Added Section -->
+<h1 class="section-title">Recently Added</h1>
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="product-card">
+                <img src="@Url.Content("~/images/eggs.jpg")" alt="30 eggs (Large)">
+                <h3>30 eggs (Large)</h3>
+                <p>R75,00</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="product-card">
+                <img src="@Url.Content("~/images/tomatoes.jpg")" alt="Tomatos">
+                <h3>60 Tomatoes</h3>
+                <p>R145,00</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="product-card">
+                <img src="@Url.Content("~/images/chicken.jpg")" alt="Whole Chicken">
+                <h3>Chicken</h3>
+                <p>R159,00</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="product-card">
+                <img src="@Url.Content("~/images/lamb.jpg")" alt="Lamb per kg">
+                <h3>Lamb</h3>
+                <p>R299,00</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="product-card">
+                <img src="@Url.Content("~/images/beef2.jpg")" alt="Beef per kg">
+                <h3>Beef per kg</h3>
+                <p>R60,00 – R110,00</p>
+            </div>
+        </div>
+    </div>
+    <!-- Navigation -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: false,
+            breakpoints: {
+                320: { slidesPerView: 1, spaceBetween: 10 },
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+                1280: { slidesPerView: 4, spaceBetween: 30 }
+            }
+        });
+    });
+</script>

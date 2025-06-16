@@ -1,0 +1,82 @@
+@model IEnumerable<Agri_Energy_Connect.Models.Product>
+
+@{
+    ViewData["Title"] = "Product Index";
+}
+
+<h2>Farm Produce</h2>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">Search Products</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Index" method="get" class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Product Name or Description</label>
+                        <input type="text" name="searchString" class="form-control" value="@ViewBag.SearchString" placeholder="Search by name or description..." />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Category</label>
+                        <select name="categoryId" class="form-select" asp-items="ViewBag.Categories">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Start Date</label>
+                        <input type="date" name="startDate" class="form-control" value="@(ViewBag.StartDate?.ToString("yyyy-MM-dd"))" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">End Date</label>
+                        <input type="date" name="endDate" class="form-control" value="@(ViewBag.EndDate?.ToString("yyyy-MM-dd"))" />
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Farmer"))
+{
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="@item.ImageUrl" alt="@item.ProdName" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.ProdName</h5>
+                    <p class="card-text">
+                        <strong>Farmer:</strong> @item.Farmer.FarmerName<br />
+                        <strong>Price:</strong> @item.Price<br />
+                        <strong>Description:</strong> @item.ProdDescription<br />
+                        <strong>Category:</strong> @item.Category.CatName<br />
+                        <strong>Date:</strong> @item.DateTime<br />
+                        <strong>Stock:</strong> @item.Stock<br />                       
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-route-id="@item.ProdId">Edit</a>
+                            <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@item.ProdId">Details</a>
+                            <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.ProdId">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

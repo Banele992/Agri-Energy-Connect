@@ -1,0 +1,307 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #f4e1c1;
+    --border-color-1: #ff4d4f;
+    --border-color-2: #52c41a;
+    --border-color-3: #1890ff;
+    --border-color-4: #722ed1;
+    --border-color-5: #eb2f96;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #1890ff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .navbar-brand img {
+        width: 40px;
+        height: 40px;
+        margin-right: 0.5rem;
+        border-radius: 20%; /* Circular logo */
+    }
+
+.navbar-nav {
+    flex-grow: 0;
+}
+
+.nav-button {
+    background-color: #52c41a; /* Green as in the image */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+    .nav-button:hover {
+        background-color: #46a017; /* Darker green on hover */
+        color: #fff;
+    }
+
+.navbar-toggler {
+    border: none;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #fff;
+        padding: 1rem;
+        border-top: 1px solid #ddd;
+    }
+
+    .nav-button {
+        display: block;
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    max-width: 350px; /* Slightly wider for better text fit */
+    text-align: left;
+    border: 2px solid;
+}
+
+    .feature-card:nth-child(1) {
+        border-color: var(--border-color-1);
+    }
+
+    .feature-card:nth-child(2) {
+        border-color: var(--border-color-2);
+    }
+
+    .feature-card:nth-child(3) {
+        border-color: var(--border-color-3);
+    }
+
+    .feature-card:nth-child(4) {
+        border-color: var(--border-color-4);
+    }
+
+    .feature-card:nth-child(5) {
+        border-color: var(--border-color-5);
+    }
+
+    .feature-card:nth-child(6) {
+        border-color: var(--border-color-1);
+    }
+
+    .feature-card h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+        color: #666;
+        margin: 0.5rem 0;
+    }
+
+    .feature-card ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .feature-card li {
+        font-size: 1rem;
+        color: #666;
+        margin: 0.5rem 0;
+    }
+
+/* Call to Action Button */
+.cta-button {
+    margin-top: 2rem;
+    background-color: white;
+    color: var(--primary-color);
+    border: 2px solid white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+    .cta-button:hover {
+        background-color: whitesmoke;
+        color: var(--primary-color);
+    }
+
+/* Recently Added Section */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 60px 0 30px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--secondary-color);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.swiper {
+    padding: 20px 0;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 220px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: darkgreen;
+    padding: 10px;
+    z-index: 10;
+}
+
+.product-card {
+    background-color: #fff !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden !important;
+    width: 220px !important;
+    text-align: center !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    margin: 0 auto;
+}
+
+    .product-card img {
+        width: 100% !important;
+        height: 160px !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    .product-card h3 {
+        font-size: 1rem !important;
+        margin: 10px !important;
+        color: #333 !important;
+    }
+
+    .product-card p {
+        font-weight: 600 !important;
+        color: var(--primary-color) !important;
+        margin: 0 10px 15px 10px !important;
+    }
+
+.nav-button {
+    background-color: #52c41a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    margin-left: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+    .nav-button:hover {
+        background-color: #46a017;
+        color: #fff;
+    }
+
+@media (max-width: 991px) {
+    .nav-button {
+        display: block;
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+}

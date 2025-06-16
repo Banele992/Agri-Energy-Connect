@@ -1,0 +1,83 @@
+@model Agri_Energy_Connect.Models.Product
+
+@{
+    ViewData["Title"] = "Product Edit";
+}
+
+<h1>Edit Product</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProdId" />
+
+            <div class="form-group">
+                <label asp-for="ProdName" class="control-label"></label>
+                <input asp-for="ProdName" class="form-control" />
+                <span asp-validation-for="ProdName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FarmerId" class="control-label"></label>
+                <select asp-for="FarmerId" class="form-control" asp-items="ViewBag.FarmerId"></select>
+                <span asp-validation-for="FarmerId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProdDescription" class="control-label"></label>
+                <input asp-for="ProdDescription" class="form-control" />
+                <span asp-validation-for="ProdDescription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label">Image</label>
+                <input type="file" name="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" style="max-width: 100px; margin-top: 10px;" />
+                    <input type="hidden" asp-for="ImageUrl" />
+                }
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Stock" class="control-label"></label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
